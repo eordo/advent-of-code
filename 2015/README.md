@@ -54,3 +54,33 @@ Take the minimum and maximum of these distances.
 
 Each term of the sequence is a vector.
 Iterate over the vector and construct the next term at the same time by counting the number of consecutive appearances of the same digit.
+
+## [Day 11: Corporate Policy](https://adventofcode.com/2015/day/11)
+
+Just implement the password requirements as described.
+To make incrementing the password more performant, store it as a Char array instead of as a string.
+
+## [Day 12: JSAbacusFramework.io](https://adventofcode.com/2015/day/12)
+
+Use [JSON.jl](https://github.com/JuliaIO/JSON.jl) to parse the JSON to native Julia types.
+This solution uses multiple dispatch to recursively find both all numbers and all objects with a "red" attribute.
+Ignoring a "red" object (dictionary) and its children (values) is functionally the same as emptying it.
+
+## [Day 13: Knights of the Dinner Table](https://adventofcode.com/2015/day/13)
+
+The solution is conceptually identical to Day 9's.
+Since the $n$ guests are seated in a circle, all possible seating arrangements are the permutations of the integers 1 through $n$.
+Unlike in Day 9, however, the first and last guest in the permutation also experience a change in happiness from sitting next to each other.
+
+## [Day 14: Reindeer Olympics](https://adventofcode.com/2015/day/14)
+
+Given $n$ reindeer flying for $T$ seconds, create an $n \times T$ matrix that records the position of each reindeer at each second.
+The winning distance is the maximum of the last column.
+Assign points to the argmax of each column, and the winning point total is the reindeer with the most points.
+
+## [Day 15: Science for Hungry People](https://adventofcode.com/2015/day/15)
+
+This is a brute-force solution.
+Collect the $m$ properties of the $n$ ingredients into an $m \times n$ matrix $A$.
+Then iterate over all partitions of 100 into a sum of $n$ integers, representing each partition as a vector $x$ that gives an amount of each ingredient.
+The resulting cookie score can be calculated from the product $Ax$.
