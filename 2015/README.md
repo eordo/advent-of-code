@@ -99,3 +99,22 @@ Iterate through the power set of container volumes and count only the subsets wh
 Represent the grid as a bit matrix.
 For each update, copy the current state of the grid so as to count the number of lit neighbors for every point.
 This way, the grid can be updated in place.
+
+## [Day 19: Medicine for Rudolph](https://adventofcode.com/2015/day/19)
+
+For Part 1, map each element to a list of its possible replacements.
+Tokenize the medicine molecule into individual elements, iterate over the tokens, and create new molecules by replacing that element from its list of replacements.
+For Part 2, I used [this Reddit post's](https://reddit.com/r/adventofcode/comments/3xflz8/day_19_solutions/cy4etju/) insights to calculate the answer according to the formula.
+
+## [Day 20: Infinite Elves and Infinite Houses](https://adventofcode.com/2015/day/20)
+
+This solution is slow by Julia standards, but it still solves in ~1 s.
+For each house, the numbers of the elves visiting that house equal the divisors of the house number.
+Use this information to calculate the number of presents given to house 1, 2, 3, etc. until the answer is found.
+But using `divisors` from [Primes.jl](https://github.com/JuliaMath/Primes.jl) means there will be many repeated factorizations for the multiples of each number.
+
+## [Day 21: RPG Simulator 20XX](https://adventofcode.com/2015/day/21)
+
+To iterate over all item combinations, represent each item as a tuple of `(Cost, Damage, Armor)` values.
+Then the set of combinations is the Cartesian product of `weapons`, `armors`, `rings`, and `rings` again.
+Implement the fight logic as described to determine if the player wins for a given item combination.
