@@ -84,3 +84,18 @@ This is a brute-force solution.
 Collect the $m$ properties of the $n$ ingredients into an $m \times n$ matrix $A$.
 Then iterate over all partitions of 100 into a sum of $n$ integers, representing each partition as a vector $x$ that gives an amount of each ingredient.
 The resulting cookie score can be calculated from the product $Ax$.
+
+## [Day 16: Aunt Sue](https://adventofcode.com/2015/day/16)
+
+For each Sue, map each listed item to its given amount.
+The real Aunt Sue is the only one whose amounts equal those on the ticker tape for all items listed for that Sue.
+
+## [Day 17: No Such Thing as Too Much](https://adventofcode.com/2015/day/17)
+
+Iterate through the power set of container volumes and count only the subsets where the container volumes sum to the given volume.
+
+## [Day 18: Like a GIF For Your Yard](https://adventofcode.com/2015/day/18)
+
+Represent the grid as a bit matrix.
+For each update, copy the current state of the grid so as to count the number of lit neighbors for every point.
+This way, the grid can be updated in place.
