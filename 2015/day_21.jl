@@ -66,9 +66,9 @@ function main()
         end
     end
 
-    # println("AoC 2015 Day 21")
-    # println("Part 1: $least_amount_spent")
-    # println("Part 2: $most_amount_spent")
+    println("AoC 2015 Day 21")
+    println("Part 1: $least_amount_spent")
+    println("Part 2: $most_amount_spent")
 end
 
 function fight!(player::Character, boss::Character)
