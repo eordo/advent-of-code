@@ -26,3 +26,16 @@ For Part 2, see if all of "north," "pole," and "object" occur in the decrypted n
 
 The hashing process is the same as implemented for [2015 Day 4](../2015/README.md/#day-4-the-ideal-stocking-stuffer).
 
+## [Day 6: Signals and Noise](https://adventofcode.com/2016/day/6)
+
+Cast the message to a `Char` matrix, then use a `counter` to find the most and least common characters in each column.
+
+## [Day 7: Internet Protocol Version 7](https://adventofcode.com/2016/day/7)
+
+Use the same regex pattern to split the supernet sequences and match the hypernet sequences.
+
+## [Day 8: Two-Factor Authentication](https://adventofcode.com/2016/day/8)
+
+Simulate the screen with a bit matrix.
+Note that the instructions use 0-indexing, whereas Julia uses 1-indexing.
+For Part 2, pretty print the final state of the screen and read the code displayed in the terminal.
