@@ -118,3 +118,26 @@ But using `divisors` from [Primes.jl](https://github.com/JuliaMath/Primes.jl) me
 To iterate over all item combinations, represent each item as a tuple of `(Cost, Damage, Armor)` values.
 Then the set of combinations is the Cartesian product of `weapons`, `armors`, `rings`, and `rings` again.
 Implement the fight logic as described to determine if the player wins for a given item combination.
+
+## [Day 22: Wizard Simulator 20XX](https://adventofcode.com/2015/day/22)
+
+The answer here is found by Monte Carlo simulation.
+Choose the player's spell at random every turn, subject to mana cost and active effect constraints.
+If a sequence of spells wins the fight for the player, note the total mana cost; repeat this simulation a large number of times and take the minimum mana cost.
+(I originally obtained my answers from 1,000,000 simulations, but I've found that 150,000 is enough.)
+
+## [Day 23: Opening the Turing Lock](https://adventofcode.com/2015/day/23)
+
+Just simulate the instructions as described.
+
+## [Day 24: It Hangs in the Balance](https://adventofcode.com/2015/day/24)
+
+The target group weight is the sum of the weights divided by 3 (by 4 for Part 2).
+Use a greedy algorithm to find the size of the first group in the ideal configuration.
+Then iterate over all subsets of that size to find all candidates for the first group, i.e., those whose weights sum to the target.
+Take the minimum quantum entanglement of these candidates.
+
+## [Day 25: Let It Snow](https://adventofcode.com/2015/day/25)
+
+Note that the $k$-th diagonal ends with the $k$-th triangular number $T_k$ in the upper right, and it starts at $T_{k-1} + 1$ in the bottom left.
+The $(i, j)$-th entry of the grid lies on the $k = (i + j - 1)$-th diagonal, so its index in the sequence of codes can be found between $T_{k-1} + 1$ and $T_k$.
