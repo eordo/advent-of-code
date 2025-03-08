@@ -39,3 +39,9 @@ Use the same regex pattern to split the supernet sequences and match the hyperne
 Simulate the screen with a bit matrix.
 Note that the instructions use 0-indexing, whereas Julia uses 1-indexing.
 For Part 2, pretty print the final state of the screen and read the code displayed in the terminal.
+
+## [Day 9: Explosives in Cyberspace](https://adventofcode.com/2016/day/9)
+
+For Part 1, count the characters.
+If reading a marker `(AxB)`, the added character count is `A * B`.
+Part 2 is done similarly, but once a marker `(AxB)` is encountered, do a recursive count of `B` times the decompressed length of the next `A` characters.
