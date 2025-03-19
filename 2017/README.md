@@ -38,3 +38,30 @@ For Part 2, sort the characters in each word of a passphrase; there will be repe
 ## [Day 5: A Maze of Twisty Trampolines, All Alike](https://adventofcode.com/2017/day/5)
 
 Store the offsets as a vector and mutate each element when its index corresponds to the current instruction.
+
+## [Day 6: Memory Reallocation](https://adventofcode.com/2017/day/6)
+
+Hash the banks configuration to store what states have been seen so far.
+The cycle length is the number of reallocation cycles between when a hashed state is seen for the first and second times.
+
+## [Day 7: Recursive Circus](https://adventofcode.com/2017/day/7)
+
+For Part 1, the root program is the only program without a parent.
+For Part 2, recursively compute the stack weights of all programs.
+An unbalanced program is one whose children's stack weights are not all equal.
+Find the deepest unbalanced program in the tree, identify its child whose stack weight differs from the other children's, and compute the new weight from the difference.
+
+## [Day 8: I Heard You Like Registers](https://adventofcode.com/2017/day/8)
+
+Store register values in a Dict, and at each step, track what the highest stored value is so far.
+
+## [Day 9: Stream Processing](https://adventofcode.com/2017/day/9)
+
+Analyze the stream character by character.
+Increment group depth when a `{` is seen, and decrement when the closing `}` is seen.
+Flag when the stream is garbage and ignore score calculations.
+
+## [Day 10: Knot Hash](https://adventofcode.com/2017/day/10)
+
+The indexes of the slice to be reversed can wrap to the front by using `mod1`, and the slice can be reversed in place with `reverse!`.
+Get the ASCII value of a Char `x` with `Int(codepoint(x))`.
