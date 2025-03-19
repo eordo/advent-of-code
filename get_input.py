@@ -15,6 +15,8 @@ from pathlib import Path
 
 
 BASE = "https://adventofcode.com"
+USER_AGENT = ("https://github.com/eordo/advent-of-code/blob/master/get_input.py"
+                " by Eric O. at https://eordonez.com")
 SESSION = Path("session.txt").read_text()
 
 
@@ -25,7 +27,9 @@ parser.add_argument("day", type=int, help="day")
 args = parser.parse_args()
 
 url = f'{BASE}/{args.year}/day/{args.day}/input'
-response = requests.get(url, cookies={"session": SESSION})
+response = requests.get(url,
+    headers={"User-Agent": USER_AGENT},
+    cookies={"session": SESSION})
 
 if not response.ok:
     print(f'Request at {url} failed with status code {response.status_code}.')
