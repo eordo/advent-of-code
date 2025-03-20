@@ -65,3 +65,46 @@ Flag when the stream is garbage and ignore score calculations.
 
 The indexes of the slice to be reversed can wrap to the front by using `mod1`, and the slice can be reversed in place with `reverse!`.
 Get the ASCII value of a Char `x` with `Int(codepoint(x))`.
+
+## [Day 11: Hex Ed](https://adventofcode.com/2017/day/11)
+
+Define one coordinate axis of the hex grid running north-south, the other running northeast-southwest.
+Then moving in the six directions maps to the following steps:
+
+* `n => (0, 1)`
+* `ne => (1, 0)`
+* `se => (1, -1)`
+* `s => (0, -1)`
+* `sw => (-1, 0)`
+* `nw => (-1, 1)`
+
+The taxicab distance from a point $(x, y)$ to the origin in this coordinate system is $\lvert x + y \rvert$ if $\mathrm{sgn}(x) = \mathrm{sgn}(y)$, otherwise $\max\left\{\lvert x \rvert, \lvert y \rvert\right\}$.
+
+## [Day 12: Digital Plumber](https://adventofcode.com/2017/day/12)
+
+Use [Graphs.jl](https://juliagraphs.org/Graphs.jl/stable/) to represent the pipe network as an undirected graph.
+For Part 1, the group size is the size of the connected component containing 0.
+For Part 2, the number of groups is the number of connected components.
+
+## [Day 13: Packet Scanners](https://adventofcode.com/2017/day/13)
+
+Let $k$ be the depth of a layer in the firewall, and let $r_k$ be the range of the $k$-th layer.
+The position of the $k$-th scanner is cyclic with period $T_k = 2 (r_k - 1)$.
+We consider position $0$ to be the top of the layer, i.e., where we have to pass through.
+
+Let $t$ be the delay in picoseconds before beginning the trip.
+(For Part 1, this means $t = 0$).
+Moving at 1 step/ps, the time at which we would arrive at the $k$-th layer is $k + t$.
+
+This means that the $k$-th scanner catches us if $k + t \equiv 0 \mod{T_k}$.
+Analytically, solving Part 2 amounts to finding the smallest $t > 0$ such that $k + t \not\equiv 0 \mod{T_k}$ for all $k$.
+In practice, we can just try $t = 1, 2, 3, \dots$ until all these incongruences hold.
+
+## [Day 14: Disk Defragmentation](https://adventofcode.com/2017/day/14)
+
+For Part 1, use the knot hash algorithm already implemented in Day 10.
+For Part 2, use `label_components` from [Images.jl](https://github.com/JuliaImages/Images.jl).
+
+## [Day 15: Dueling Generators](https://adventofcode.com/2017/day/15)
+
+Note that the binary representations of two integers `A` and `B` agree in the last 16 bits if `(A - B) & 0xffff == 0`, i.e., the binary representation of the difference `A - B` has at least 16 trailing zeros.
