@@ -108,3 +108,19 @@ For Part 2, use `label_components` from [Images.jl](https://github.com/JuliaImag
 ## [Day 15: Dueling Generators](https://adventofcode.com/2017/day/15)
 
 Note that the binary representations of two integers `A` and `B` agree in the last 16 bits if `(A - B) & 0xffff == 0`, i.e., the binary representation of the difference `A - B` has at least 16 trailing zeros.
+
+## [Day 16: Permutation Promenade](https://adventofcode.com/2017/day/16)
+
+The sequence of positions is cyclic, so find its period (in number of times the dance is done) by repeating the dance until the subsequent positions equal the initial positions.
+
+## [Day 17: Spinlock](https://adventofcode.com/2017/day/17)
+
+For Part 1, iteratively fill the buffer and find the index of 2017.
+For Part 2, note that 0 is always in the first index of the buffer.
+Let $p_k$ be the index where the $k$-th natural number will be inserted.
+The number $k$ is inserted after 0 when $p_k = 2$.
+
+## [Day 20: Particle Swarm](https://adventofcode.com/2017/day/20)
+
+Simulate the particle movements for a sufficiently large number of ticks $T$ such that the same particle stays closest to the origin and no more collisions occur.
+I found that $T = 500$ works.
